@@ -19,7 +19,7 @@ lamda = 5
 ### Network Architecture
 
 n_node_input = 784
-n_node_hidden = 100
+n_node_hidden = 30
 n_node_output = 10
 
 ### Weight & Bias
@@ -144,12 +144,12 @@ except:
 import matplotlib.pyplot as plt
 idx = np.arange(1,n_epoch+1)
 
-plt.plot(idx, np.array(test_errors)*100,'ro-', label='with L2 regualrization')
+plt.plot(idx, np.array(test_errors)*100,'ro-', label='with L2 regularization')
 try:
     # Load baseline
     file_name_common = 'ce'+'_nHidden'+str(n_node_hidden)+'.txt'
     mse = np.loadtxt(fname='test_'+file_name_common)
-    plt.plot(idx,np.array(mse)*100,'bo-', label='without L2 regualrization')
+    plt.plot(idx,np.array(mse)*100,'bo-', label='without L2 regularization')
 except:
     print ('There is no result of baseline')
 
