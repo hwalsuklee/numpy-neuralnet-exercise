@@ -20,7 +20,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description=desc)
 
     parser.add_argument('--model', type=str, default='GAN',
-                        choices=['baseline', 'v1', 'v2', 'v3', 'v4', 'v5', 'v6'],
+                        choices=['v0', 'v1', 'v2', 'v3', 'v4', 'v5', 'v6'],
                         help='The type of model', required=True)
 
     return parser.parse_args()
@@ -38,8 +38,8 @@ def main():
     num_labels = mnist_data.NUM_LABELS
 
     # Choose model
-    if args.model == 'baseline':
-        model = models.baseline
+    if args.model == 'v0':
+        model = models.version_0
         learning_rate = 0.1
         display_step = 500
     elif args.model == 'v1':

@@ -7,8 +7,8 @@ import tensorflow.contrib.slim as slim
 from tensorflow.contrib.layers.python.layers import initializers
 from tensorflow.python.ops import init_ops
 
-def baseline(inputs, is_training):
-    with tf.name_scope('baseline'):
+def version_0(inputs, is_training):
+    with tf.name_scope('version_0'):
         n_hidden = 100
         n_out = 10
 
